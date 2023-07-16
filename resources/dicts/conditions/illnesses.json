@@ -126,7 +126,7 @@
             }
         ],
         "herbs": [
-            "catmint",
+            "batnip",
             "tansy",
             "mullein",
             "plantain",
@@ -135,7 +135,7 @@
             "moss"
         ]
     },
-    "kittencough": {
+    "pupcough": {
         "severity": "severe",
         "mortality": {
             "newborn": 2,
@@ -165,7 +165,7 @@
             }
         ],
         "herbs": [
-            "catmint",
+            "batnip",
             "tansy",
             "mullein",
             "plantain",
@@ -336,7 +336,7 @@
             }
         ],
         "herbs": [
-            "catmint",
+            "batnip",
             "plantain",
             "tansy",
             "mullein",
