@@ -16,10 +16,10 @@ status_dict = {
     "make clan screen": "Making a Clan",
     "mediation screen": "Mediating a dispute",
     "patrol screen": "On a patrol",
-    "profile screen": "Viewing a cat's profile",
+    "profile screen": "Viewing a slugcat's profile",
     "ceremony screen": "Holding a ceremony",
-    "starclan screen": "Viewing StarClan",
-    "dark forest screen": "Viewing the Dark Forest",
+    "starclan screen": "Viewing the ascended",
+    "dark forest screen": "Viewing the Echoes",
     "med den screen": "In the medicine den",
     }
 
