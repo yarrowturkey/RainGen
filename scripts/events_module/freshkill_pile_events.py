@@ -104,7 +104,7 @@ class Freshkill_Events():
 
         elif cat_nutrition.percentage <= MAL_PERCENTAGE and cat_nutrition.percentage > STARV_PERCENTAGE:
             # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
-            if cat.status in ["kitten", "elder"]:
+            if cat.status in ["slugpup", "elder"]:
                 needed_tags = ["starving"]
                 illness = "starving"
             else:        
