@@ -13,24 +13,24 @@
 		"prey_requirement":{
 			"leader": 3,
 			"deputy": 3,
-			"medicine cat": 2,
-			"medicine cat apprentice": 1.5,
+			"medicine slugcat": 2,
+			"medicine slugcat apprentice": 1.5,
 			"mediator apprentice": 1.5,
 			"mediator": 2,
 			"warrior": 3,
 			"apprentice": 1.5,
 			"elder": 1.5,
 			"queen": 4,
-			"kitten": 0.5,
+			"slugpup": 0.5,
 			"newborn": 0.2
 		},
 		"feeding_order":[
 			"newborn",
-			"kitten",
+			"slugpup",
 			"queen",
 			"elder",
-			"medicine cat",
-			"medicine cat apprentice",
+			"medicine slugcat",
+			"medicine slugcat apprentice",
 			"apprentice",
 			"mediator apprentice",
 			"warrior",
@@ -284,7 +284,7 @@
 	},
 	"cat_ages": {
 		"newborn": [0, 0],
-		"kitten": [1, 5],
+		"slugpup": [1, 5],
 		"adolescent": [6, 11],
 		"young adult": [12, 47],
         "adult": [48, 95],
@@ -342,7 +342,7 @@
 		"base_app_timeskip_ex": [[3, 12],[5, 6]],
 		"base_med_app_timeskip_ex": [[2, 7],[2, 3]],
 		"max_apprentice_age": {
-			"medicine cat apprentice": 30,
+			"medicine slugcat apprentice": 30,
 			"apprentice": 25,
 			"mediator apprentice": 25
 		},
