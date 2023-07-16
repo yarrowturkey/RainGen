@@ -101,9 +101,9 @@ class NewCatEvents:
         elif "new_app" in new_cat_event.tags:
             status = "apprentice"
         elif "new_med_app" in new_cat_event.tags:
-            status = "medicine cat apprentice"
+            status = "medicine slugcat apprentice"
         elif "new_med" in new_cat_event.tags:
-            status = "medicine cat"
+            status = "medicine slugcat"
 
 
         
@@ -261,7 +261,7 @@ class NewCatEvents:
 
     def update_cat_properties(self, cat):
         if cat.backstory in BACKSTORIES["backstory_categories"]['healer_backstories']:
-                cat.status = 'medicine cat'
+                cat.status = 'medicine slugcat'
         else:
             cat.status = "warrior"
         cat.outside = False
