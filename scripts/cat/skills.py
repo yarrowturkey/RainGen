@@ -101,16 +101,16 @@ class SkillPath(Enum):
         "fantastic healer"
     )
     STAR = (
-        "curious about StarClan",
-        "connection to Starclan",
-        "deep StarClan bond",
-        "unshakable StarClan link",
+        "curious about ascension",
+        "connection to the ascended",
+        "deep bond with the ascended",
+        "unshakable link with the ascended",
     )
     DARK = (
-        "interested in the Dark Forest",
-        "Dark Forest affinity",
-        "deep Dark Forest bond",
-        "unshakable Dark Forest link",
+        "interested in Echoes",
+        "affinity with Echoes",
+        "deep bond with Echoes",
+        "unshakable link with Echoes",
     )
     OMEN = (
         "interested in oddities",
@@ -384,7 +384,7 @@ class CatSkills:
         #TODO: Make this nicer
         if status == "newborn" or moons <= 0:
             pass
-        elif status == 'kitten' or moons < 6:
+        elif status == 'slugpup' or moons < 6:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
         elif status == 'apprentice':
             new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
@@ -499,7 +499,7 @@ class CatSkills:
         
         if not (the_cat.outside or the_cat.exiled):
                         
-            if the_cat.status == 'kitten':
+            if the_cat.status == 'slugpup':
                 # Check to see if the cat gains a secondary
                 if not self.secondary and not int(random.random() * 22):
                     # if there's no secondary skill, try to give one!
@@ -642,7 +642,7 @@ class CatSkills:
         new_skill = CatSkills()
         
         conversion = {
-            "strong connection to StarClan": (SkillPath.STAR, 2), 
+            "strong connection to the ascended": (SkillPath.STAR, 2), 
             "good healer": (SkillPath.HEALER, 1),
             "great healer": (SkillPath.HEALER, 2),
             "fantastic healer": (SkillPath.HEALER, 3),
