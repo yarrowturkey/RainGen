@@ -152,10 +152,10 @@ class Pregnancy_Events():
         insert = 'this should not display'
         insert2 = 'this should not display'
         if amount == 1:
-            insert = 'a single kitten'
+            insert = 'a single slugpup'
             insert2 = 'it'
         if amount > 1:
-            insert = f'a litter of {amount} kits'
+            insert = f'a litter of {amount} slugpups'
             insert2 = 'them'
 
         print_event = f"{cat.name} found {insert} and decides to adopt {insert2}."
@@ -201,9 +201,9 @@ class Pregnancy_Events():
             kits = self.get_kits(amount, cat, None, clan)
             insert = 'this should not display'
             if amount == 1:
-                insert = 'a single kitten'
+                insert = 'a single slugpup'
             if amount > 1:
-                insert = f'a litter of {amount} kits'
+                insert = f'a litter of {amount} slugpups'
             print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
             cats_involved = [cat.ID]
             for kit in kits:
@@ -322,9 +322,9 @@ class Pregnancy_Events():
                 kit.create_one_relationship(cat)
 
         if kits_amount == 1:
-            insert = 'single kitten'
+            insert = 'single slugpup'
         else:
-            insert = f'litter of {kits_amount} kits'
+            insert = f'litter of {kits_amount} slugpups'
 
         # Since cat has given birth, apply the birth cooldown. 
         cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
@@ -434,7 +434,7 @@ class Pregnancy_Events():
 
         # decide chances of having kits, and if it's possible at all.
         # Including - age, dead statis, having kits turned off.
-        not_correct_age = cat.age in ['newborn', 'kitten', 'adolescent'] or cat.moons < 15
+        not_correct_age = cat.age in ['newborn', 'slugpup', 'adolescent'] or cat.moons < 15
         if not_correct_age or cat.no_kits or cat.dead:
             return False
 
@@ -645,9 +645,9 @@ class Pregnancy_Events():
                 # No parents provided, give a blood parent - this is an adoption. 
                 if not blood_parent:
                     # Generate a blood parent if we haven't already. 
-                    insert = "their kits are"
+                    insert = "their slugpups are"
                     if kits_amount == 1:
-                        insert = "their kit is"
+                        insert = "their slugpup is"
                     thought = f"Is glad that {insert} safe"
                     blood_parent = create_new_cat(Cat, Relationship,
                                                 status=random.choice(["loner", "kittypet"]),
