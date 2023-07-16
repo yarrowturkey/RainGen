@@ -148,7 +148,7 @@ class Pelt():
                  tint:str="none",
                  skin:str="BLACK",
                  white_patches_tint:str="none",
-                 kitten_sprite:int=None,
+                 slugpup_sprite:int=None,
                  adol_sprite:int=None,
                  adult_sprite:int=None,
                  senior_sprite:int=None,
@@ -174,7 +174,7 @@ class Pelt():
         self.tint = tint
         self.white_patches_tint = white_patches_tint
         self.cat_sprites =  {
-            "kitten": kitten_sprite if kitten_sprite is not None else 0,
+            "slugpup": slugpup_sprite if slugpup_sprite is not None else 0,
             "adolescent": adol_sprite if adol_sprite is not None else 0,
             "young adult": adult_sprite if adult_sprite is not None else 0,
             "adult": adult_sprite if adult_sprite is not None else 0,
@@ -606,7 +606,7 @@ class Pelt():
     def init_sprite(self):
         self.cat_sprites = {
             'newborn': 20,
-            'kitten': random.randint(0, 2),
+            'slugpup': random.randint(0, 2),
             'adolescent': random.randint(3, 5),
             'senior': random.randint(12, 14),
             'sick_young': 19,
@@ -629,7 +629,7 @@ class Pelt():
         if age == "newborn":
             return
         
-        if age in ['kitten', 'adolescent']:
+        if age in ['slugpup', 'adolescent']:
             scar_choice = random.randint(0, 50)
         elif age in ['young adult', 'adult']:
             scar_choice = random.randint(0, 20)
@@ -651,7 +651,7 @@ class Pelt():
             return
         
         acc_display_choice = random.randint(0, 80)
-        if age in ['kitten', 'adolescent']:
+        if age in ['slugpup', 'adolescent']:
             acc_display_choice = random.randint(0, 180)
         elif age in ['young adult', 'adult']:    
             acc_display_choice = random.randint(0, 100)
