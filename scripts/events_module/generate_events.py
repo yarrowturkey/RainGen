@@ -184,12 +184,12 @@ class GenerateEvents:
 
         if event_type == 'death':
             warrior_adjacent_ranks.extend(["deputy", "apprentice"])
-            excluded_from_general.extend(["kitten", "leader", "newborn"])
+            excluded_from_general.extend(["slugpup", "leader", "newborn"])
         elif event_type in ['injury', 'nutrition', 'misc_events', 'new_cat']:
             warrior_adjacent_ranks.extend(["deputy", "apprentice", "leader"])
-            excluded_from_general.extend(["kitten", "leader", "newborn"])
+            excluded_from_general.extend(["slugpup", "leader", "newborn"])
 
-        if cat_type in ["medicine cat", "medicine cat apprentice"]:
+        if cat_type in ["medicine slugcat", "medicine slugcat apprentice"]:
             cat_type = "medicine"
         elif cat_type in ["mediator", "mediator apprentice"]:
             cat_type = "mediator"
@@ -337,9 +337,9 @@ class GenerateEvents:
                     continue
 
             # check meddie tags
-            if "medicine_cat" in event.tags and cat.status != "medicine cat":
+            if "medicine_cat" in event.tags and cat.status != "medicine slugcat":
                 continue
-            elif "medicine_cat_app" in event.tags and cat.status != "medicine cat apprentice":
+            elif "medicine_cat_app" in event.tags and cat.status != "medicine slugcat apprentice":
                 continue
 
             # other Clan related checks
@@ -378,9 +378,9 @@ class GenerateEvents:
                     continue
                 if "other_cat_dep" in event.tags and other_cat.status != "deputy":
                     continue
-                if "other_cat_med" in event.tags and other_cat.status != "medicine cat":
+                if "other_cat_med" in event.tags and other_cat.status != "medicine slugcat":
                     continue
-                if "other_cat_med_app" in event.tags and other_cat.status != "medicine cat apprentice":
+                if "other_cat_med_app" in event.tags and other_cat.status != "medicine slugcat apprentice":
                     continue
                 if "other_cat_warrior" in event.tags and other_cat.status != "warrior":
                     continue
@@ -388,9 +388,9 @@ class GenerateEvents:
                     continue
                 if "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
+                if "other_cat_adult" in event.tags and other_cat.age in ["elder", "slugpup", "newborn"]:
                     continue
-                if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
+                if "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'slugpup']:
                     continue
 
                 if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:
