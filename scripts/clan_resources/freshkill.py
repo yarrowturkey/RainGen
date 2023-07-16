@@ -148,7 +148,7 @@ class Freshkill_Pile():
         for status_ in FEEDING_ORDER:
             if status_ == "queen":
                 relevant_group = relevant_queens
-            elif status_ == "kitten":
+            elif status_ == "slugpup":
                 relevant_group = [cat for cat in living_cats if str(cat.status) == status_ and cat.moons >= 2]
             else:
                 relevant_group = [cat for cat in living_cats if str(cat.status) == status_]
