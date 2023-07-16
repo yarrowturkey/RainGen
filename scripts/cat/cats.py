@@ -1506,7 +1506,7 @@ class Cat():
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
-        if name == 'kittencough' and self.status != 'kitten':
+        if name == 'pupcough' and self.status != 'slugpup':
             return
 
         illness = ILLNESSES[name]
@@ -2804,7 +2804,7 @@ class Cat():
                 "pelt_name": self.pelt.name,
                 "pelt_color": self.pelt.colour,
                 "pelt_length": self.pelt.length,
-                "sprite_kitten": self.pelt.cat_sprites['kitten'],
+                "sprite_slugpup": self.pelt.cat_sprites['slugpup'],
                 "sprite_adolescent": self.pelt.cat_sprites['adolescent'],
                 "sprite_adult": self.pelt.cat_sprites['adult'],
                 "sprite_senior": self.pelt.cat_sprites['senior'],
