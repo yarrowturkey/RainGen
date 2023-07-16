@@ -61,7 +61,7 @@ class Condition_Events():
                 random_index = int(random.random() * len(possible_illnesses))
                 chosen_illness = possible_illnesses[random_index]
                 # if a non-kitten got kittencough, switch it to whitecough instead
-                if chosen_illness == 'kittencough' and cat.status != 'kitten':
+                if chosen_illness == 'pupcough' and cat.status != 'slugpup':
                     chosen_illness = 'whitecough'
                 # make em sick
                 cat.get_ill(chosen_illness)
@@ -357,7 +357,7 @@ class Condition_Events():
         event_list = []
         illness_progression = {
             "running nose": "whitecough",
-            "kittencough": "whitecough",
+            "pupcough": "whitecough",
             "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
@@ -614,14 +614,14 @@ class Condition_Events():
                     med_parent = False  # If they have a med parent, this will be flicked to True in the next couple lines.
                     if cat.parent1 in Cat.all_cats:
                         parent1_dead = Cat.all_cats[cat.parent1].dead
-                        if Cat.all_cats[cat.parent1].status == "medicine cat":
+                        if Cat.all_cats[cat.parent1].status == "medicine slugcat":
                             med_parent = True
                     else:
                         parent1_dead = True
 
                     if cat.parent2 in Cat.all_cats:
                         parent2_dead = Cat.all_cats[cat.parent2].dead
-                        if Cat.all_cats[cat.parent2].status == "medicine cat":
+                        if Cat.all_cats[cat.parent2].status == "medicine slugcat":
                             med_parent = True
                     else:
                         parent2_dead = True
@@ -676,7 +676,7 @@ class Condition_Events():
         }
 
         if not triggered and not cat.dead and cat.status not in \
-                ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
+                ['leader', 'medicine slugcat', 'slugpup', 'newborn', 'medicine slugcat apprentice', 'mediator',
                  'mediator apprentice', 'elder'] \
                 and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
@@ -687,7 +687,7 @@ class Condition_Events():
                         # being 100%
                         retire_chances = {
                             'newborn': 0,
-                            'kitten': 0,
+                            'slugpup': 0,
                             'adolescent': 50,  # This is high so instances where an cat retires the same moon they become an apprentice is rare
                             'young adult': 10,
                             'adult': 5,
@@ -697,7 +697,7 @@ class Condition_Events():
                     else:
                         retire_chances = {
                             'newborn': 0,
-                            'kitten': 0,
+                            'slugpup': 0,
                             'adolescent': 100,
                             'young adult': 80,
                             'adult': 70,
@@ -710,7 +710,7 @@ class Condition_Events():
                         retire_involved = [cat.ID]
                         if cat.age == 'adolescent':
                             event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
-                                    f"kits, they're warmly welcomed into the elder's den."
+                                    f"slugpups, they're warmly welcomed into the elder's den."
                         elif game.clan.leader is not None:
                             if not game.clan.leader.dead and not game.clan.leader.exiled and \
                                     not game.clan.leader.outside and cat.moons < 120:
@@ -906,7 +906,7 @@ class Condition_Events():
                 if herb == herb_used:
                     break
             modifier = count
-            if cat.status in ['elder', 'kitten']:
+            if cat.status in ['elder', 'slugpup']:
                 modifier = modifier * 2
 
             effect_message = 'this should not show up'
